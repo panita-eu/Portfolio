@@ -50,7 +50,7 @@ a{ color: inherit; text-decoration: none; }
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
-.mark{ font-family: var(--mono); font-weight:500; font-size: 0.9rem; letter-spacing: 0.05em; }
+.mark{ font-family: 'Caveat', cursive; font-weight:700; font-size: 1.6rem; letter-spacing: 0.01em; }
 .site-header nav{ display:flex; gap: 2rem; }
 .site-header nav a{
   font-size: 0.85rem; color: var(--ink-soft);
