@@ -1,0 +1,205 @@
+/* ---------- Tokens ---------- */
+:root{
+  --bg: #ffffff;
+  --ink: #121210;
+  --ink-soft: #5c5c58;
+  --ink-faint: #9a9a94;
+  --line: #e4e4e0;
+  --line-strong: #121210;
+  --editable-bg: #f4f4f0;
+  --editable-text: #8a8a2e;
+  --serif: 'Instrument Serif', serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'Inter', sans-serif;
+  --max: 920px;
+  --pad: 6vw;
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono{ font-family: var(--mono); letter-spacing: 0.02em; }
+
+a{ color: inherit; text-decoration: none; }
+
+::selection{ background: var(--ink); color: var(--bg); }
+
+/* subtle grain overlay for texture, respects reduced motion */
+.grain{
+  position: fixed; inset: 0; pointer-events: none; z-index: 999;
+  opacity: 0.025; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Header ---------- */
+.site-header{
+  position: sticky; top:0; z-index: 50;
+  display:flex; justify-content: space-between; align-items:center;
+  padding: 1.4rem var(--pad);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.mark{ font-family: var(--mono); font-weight:500; font-size: 0.9rem; letter-spacing: 0.05em; }
+.site-header nav{ display:flex; gap: 2rem; }
+.site-header nav a{
+  font-size: 0.85rem; color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+.site-header nav a:hover{ color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero{
+  padding: 14vh var(--pad) 10vh;
+  max-width: 1100px;
+}
+.eyebrow{ font-size: 0.78rem; color: var(--ink-soft); margin-bottom: 1.6rem; text-transform: uppercase; }
+.hero h1{
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.hero h1 em{ font-style: italic; }
+.hero-sub{
+  max-width: 34rem;
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+.ledger-preview{
+  margin-top: 3.5rem;
+  display:flex; align-items:center; gap: 1rem;
+  font-size: 0.72rem; color: var(--ink-faint);
+}
+.ledger-preview .line{
+  flex:1; height:1px; background: var(--line);
+}
+
+/* ---------- Section label ---------- */
+.section-label{
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  padding: 0 var(--pad);
+  margin-bottom: 2.4rem;
+}
+
+/* ---------- Work / Ledger entries ---------- */
+.work{ padding: 8vh 0; border-top: 1px solid var(--line); }
+
+.entry{
+  border-top: 1px solid var(--line);
+  padding: 3rem var(--pad);
+}
+.entry:last-child{ border-bottom: 1px solid var(--line); }
+
+.entry-row{
+  display:flex; align-items: baseline; gap: 1.2rem; flex-wrap: wrap;
+}
+.entry-index{ font-size: 0.78rem; color: var(--ink-faint); }
+.entry-row h3{
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  flex: 1;
+}
+.entry-year{ font-size: 0.78rem; color: var(--ink-faint); }
+
+.entry-tags{
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  display:flex; gap: 0.5rem;
+}
+
+.entry-body{ margin-top: 1.6rem; max-width: 760px; }
+.entry-lede{ font-size: 1.05rem; color: var(--ink); margin-bottom: 1.8rem; }
+
+.entry-grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap: 1.8rem 2.4rem;
+}
+.entry-grid h4{
+  font-size: 0.7rem; color: var(--ink-faint);
+  text-transform: uppercase; margin-bottom: 0.5rem;
+}
+.entry-grid p{ font-size: 0.95rem; color: var(--ink-soft); }
+
+.editable{
+  background: var(--editable-bg);
+  color: var(--editable-text);
+  padding: 0.6rem 0.8rem;
+  border-radius: 2px;
+  font-size: 0.85rem !important;
+  font-style: italic;
+}
+
+/* ---------- About ---------- */
+.about{ padding: 10vh var(--pad); border-top: 1px solid var(--line); }
+.about-grid{
+  display:grid; grid-template-columns: 1.2fr 1fr; gap: 3rem;
+  align-items: start;
+}
+.about-text{ font-size: 1.15rem; color: var(--ink-soft); max-width: 34rem; }
+.timeline{ display:flex; flex-direction: column; gap: 1.4rem; }
+.timeline li{ display:flex; flex-direction: column; gap: 0.2rem; border-left: 1px solid var(--line); padding-left: 1rem; }
+.t-role{ font-size: 0.85rem; color: var(--ink); }
+.t-company{ font-size: 0.78rem; color: var(--ink-soft); }
+.t-date{ font-size: 0.72rem; color: var(--ink-faint); }
+
+/* ---------- Resume ---------- */
+.resume{ padding: 8vh var(--pad); border-top: 1px solid var(--line); }
+.resume p{ color: var(--ink-soft); margin-bottom: 1.4rem; }
+.resume-link{
+  display:inline-block; font-size: 0.85rem;
+  border: 1px solid var(--line-strong);
+  padding: 0.7rem 1.4rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.resume-link:hover{ background: var(--ink); color: var(--bg); }
+
+/* ---------- Contact ---------- */
+.contact{ padding: 12vh var(--pad); border-top: 1px solid var(--line); }
+.contact-text{ color: var(--ink-soft); margin-bottom: 1rem; }
+.contact-email{
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  display:inline-block; margin-bottom: 2rem;
+}
+.contact-links{ display:flex; gap: 1.6rem; font-size: 0.78rem; color: var(--ink-soft); }
+.contact-links a:hover{ color: var(--ink); }
+
+/* ---------- Footer ---------- */
+.site-footer{
+  display:flex; justify-content: space-between;
+  padding: 1.6rem var(--pad);
+  border-top: 1px solid var(--line);
+  font-size: 0.7rem; color: var(--ink-faint);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px){
+  .site-header nav{ gap: 1.2rem; }
+  .entry-grid{ grid-template-columns: 1fr; }
+  .about-grid{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Motion & focus ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+}
+a:focus-visible, .resume-link:focus-visible{
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
