@@ -1,19 +1,48 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Subtle reveal on scroll for ledger entries — respects reduced motion
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const entries = document.querySelectorAll('.entry, .about, .resume, .contact');
-  entries.forEach(el => { el.style.opacity = 0; el.style.transform = 'translateY(16px)'; el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; });
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const observer = new IntersectionObserver((items) => {
-    items.forEach(item => {
-      if (item.isIntersecting) {
-        item.target.style.opacity = 1;
-        item.target.style.transform = 'translateY(0)';
-        observer.unobserve(item.target);
+// Reveal helper
+function reveal(el) {
+  el.style.opacity = 1;
+  el.style.transform = 'translateY(0)';
+}
+
+// Subtle reveal on scroll — respects reduced motion
+if (!reduceMotion) {
+  const items = document.querySelectorAll('.entry, .work-card, .about, .resume, .contact');
+  items.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        reveal(entry.target);
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
 
-  entries.forEach(el => observer.observe(el));
+  items.forEach(el => observer.observe(el));
 }
+
+// Work tabs — switch between company panels
+const tabs = document.querySelectorAll('.work-tab');
+const panels = document.querySelectorAll('.work-panel');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+
+    tabs.forEach(t => t.classList.toggle('is-active', t === tab));
+    panels.forEach(panel => {
+      const active = panel.id === 'panel-' + target;
+      panel.classList.toggle('is-active', active);
+      // reveal contents of a newly shown panel so nothing stays invisible
+      if (active) panel.querySelectorAll('.entry, .work-card').forEach(reveal);
+    });
+  });
+});
