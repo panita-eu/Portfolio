@@ -209,6 +209,8 @@ a{ color: inherit; text-decoration: none; }
   display:flex; gap: 0.5rem;
 }
 
+.entry-tags .soon{ color: var(--accent); }
+
 .entry-body{ margin-top: 1.6rem; max-width: 760px; }
 .entry-lede{ font-size: 1.05rem; color: var(--ink); margin-bottom: 1.8rem; }
 
