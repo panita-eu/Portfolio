@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panita Portfolio</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="description" content="Portfolio of Tanggwa, UX/UI Design Team Lead — systems, transaction flows, and cross-functional product design.">
+<meta name="description" content="Portfolio of Panita Euawongyart, UX/UI Design Team Lead in Bangkok &#8212; mobile and web applications across finance, property, retail and internal systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <a href="#top" class="mark">Panita Portfolio</a>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow mono">UX / UI Design Team Lead — Bangkok, TH</p>
+    <h1><em>Systems,</em><br>translated into<br>interfaces.</h1>
+    <p class="hero-sub">Tanggwa — 8 years designing product interfaces across POS, CRM, and transaction systems. Currently leading design at TMES Co., Ltd.</p>
+    <p class="hero-sub">I design the screens people use at work, where a confusing flow costs someone their afternoon &#8212; not just a bad first impression.</p>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work" class="work">
+    <h2 class="section-label mono">Selected Work</h2>
+
+    <div class="work-tabs">
+      <button class="work-tab is-active" data-tab="tmes">TMES</button>
+      <button class="work-tab" data-tab="socket9">Socket 9</button>
+    </div>
+
+    <!-- PANEL: TMES -->
+    <div class="work-panel is-active" id="panel-tmes">
+
+      <!-- 01 BMS -->
+    <article class="entry" id="bms">
+      <div class="entry-row">
+        <span class="entry-index mono">TXN—01</span>
+        <h3><a href="bms.html">BMS · Transaction Redesign</a></h3>
+        <span class="entry-year mono">2025</span>
+      </div>
+      <div class="entry-tags mono">
+        <span>Primary case study</span><span>·</span><span>Flow &amp; visual redesign</span>
+      </div>
+      <div class="entry-body">
+        <p class="entry-lede">A brief from the Managing Director to simplify — visually and functionally — the core transaction flow used across BMS client deployments.</p>
+
+        <div class="entry-grid">
+          <div>
+            <h4 class="mono">Brief</h4>
+            <p>The MD's ask arrived at business-level: improve the visual design, tighten the UX, and shorten the flow. No formal spec, no user research attached — translating that into concrete design decisions was the actual work.</p>
+          </div>
+          <div>
+            <h4 class="mono">Approach</h4>
+            <p>Audited the existing flow step by step to separate genuine business logic from steps that existed by habit. Rebuilt the visual hierarchy so the transaction's critical fields surface first, and reduced the number of screens a user has to move through to complete an entry.</p>
+          </div>
+          <div>
+            <h4 class="mono">Constraints</h4>
+            <p>BMS is a TMES product, not a one-off build — this base design ships to every client, who then re-skin it to their own CI. Any change had to hold up as the foundation every deployment builds from, ruling out a full rebuild in favor of a targeted redesign.</p>
+          </div>
+          <div>
+            <h4 class="mono">Outcome</h4>
+            <p>Across all three modules: the SKU list went from an empty placeholder to a searchable, paginated table; entries could finally be saved as drafts mid-flow; and financial fields were grouped so only what's relevant shows by default.</p>
+          </div>
+        </div>
+        <a href="bms.html" class="resume-link mono" style="margin-top: 2rem; display: inline-block;">View full case study ↗</a>
+      </div>
+    </article>
+
+    <!-- 02 SBCS -->
+    <article class="entry" id="sbcs">
+      <div class="entry-row">
+        <span class="entry-index mono">TXN—02</span>
+        <h3>SBCS</h3>
+        <span class="entry-year mono">—</span>
+      </div>
+      <div class="entry-tags mono">
+        <span>Supporting case study</span>
+      </div>
+      <div class="entry-body">
+        <p class="entry-lede editable">[Add context — what SBCS is, your role, and one decision worth telling]</p>
+      </div>
+    </article>
+
+
+
+      <article class="entry" id="sbcs">
+        <div class="entry-row">
+          <h3>SBCS</h3>
+          <span class="entry-year mono">2026</span>
+        </div>
+        <div class="entry-tags mono">
+          <span>Supporting case study</span><span>&#183;</span><span class="soon">Coming soon</span>
+        </div>
+      </article>
+
+      <article class="entry" id="doitung">
+        <div class="entry-row">
+          <h3>DoiTung</h3>
+          <span class="entry-year mono">2025 &#8212; ongoing</span>
+        </div>
+        <div class="entry-tags mono">
+          <span>Supporting case study</span><span>&#183;</span><span>AI-assisted production</span><span>&#183;</span><span class="soon">Coming soon</span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- PANEL: SOCKET 9 -->
+    <div class="work-panel" id="panel-socket9">
+      <div class="work-grid">
+
+        <article class="work-card">
+          <div class="work-thumb"><img src="work-1.jpg" alt="The Bangkok Residence" loading="lazy"></div>
+          <span class="work-type mono">Web Application</span>
+          <h3>The Bangkok Residence</h3>
+          <p>Property agency platform for buying, selling and renting real estate &#8212; with advanced search, BTS/MRT nearby maps, virtual 360 tours and property comparison.</p>
+        </article>
+
+        <article class="work-card">
+          <div class="work-thumb"><img src="work-2.jpg" alt="Ratchthani Leasing" loading="lazy"></div>
+          <span class="work-type mono">Mobile Application</span>
+          <h3>Ratchthani Leasing</h3>
+          <p>Hire-purchase and finance leasing service for commercial vehicles &#8212; installment schedules, QR code payments and insurance policy management.</p>
+        </article>
+
+        <article class="work-card">
+          <div class="work-thumb"><img src="work-3.jpg" alt="Edwin Novel Jewelry Design" loading="lazy"></div>
+          <span class="work-type mono">Web Application</span>
+          <h3>Edwin Novel Jewelry Design</h3>
+          <p>Jewelry e-commerce for diamonds and gemstones &#8212; shop by category, engagement rings by shape, product filtering and dynamic image hotspots.</p>
+        </article>
+
+        <article class="work-card">
+          <div class="work-thumb"><img src="work-4.jpg" alt="AWC Hospitality Group" loading="lazy"></div>
+          <span class="work-type mono">Mobile Application</span>
+          <h3>AWC Hospitality Group</h3>
+          <p>Lifestyle real estate app using iBeacon Bluetooth for indoor navigation &#8212; virtual 360 art gallery tours, location filters and user reviews.</p>
+        </article>
+
+        <article class="work-card">
+          <div class="work-thumb"><img src="work-5.jpg" alt="Kalibloom" loading="lazy"></div>
+          <span class="work-type mono">Web Application</span>
+          <h3>Kalibloom</h3>
+          <p>Premium hemp and CBD e-commerce &#8212; age verification gateway, highlighted product collections, social integration and gift vouchers.</p>
+        </article>
+
+        <article class="work-card">
+          <div class="work-thumb"><img src="work-6.jpg" alt="UFUND" loading="lazy"></div>
+          <span class="work-type mono">Mobile Application</span>
+          <h3>UFUND</h3>
+          <p>Apple product installment service for students and individuals &#8212; no credit card required, with membership, down payment and customizable application forms.</p>
+        </article>
+
+        <article class="work-card">
+          <div class="work-thumb"><img src="work-7.jpg" alt="Great A Way Group" loading="lazy"></div>
+          <span class="work-type mono">Web Application</span>
+          <h3>Great A Way Group</h3>
+          <p>Corporate landing pages built on Odoo for a construction and interior contracting group, covering three business units under one identity.</p>
+        </article>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2 class="section-label mono">About</h2>
+    <div class="about-grid">
+      <p class="about-text">UX/UI Designer with 8 years of experience across mobile app, web app and responsive design. Currently UX/UI Design Team Lead at TMES Co., Ltd. since March 2025, managing design delivery across multiple concurrent client projects and collaborating with cross-functional teams.</p>
+      <ul class="timeline mono">
+        <li><span class="t-role">UX/UI Design Team Lead</span><span class="t-company">TMES Co., Ltd.</span><span class="t-date">Mar 2025 — Present</span></li>
+        <li><span class="t-role">Senior UI Designer</span><span class="t-company">Socket 9 Co., Ltd.</span><span class="t-date">~6 years</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" class="resume">
+    <h2 class="section-label mono">Resume</h2>
+    <p>Full work history, tools, and role details.</p>
+    <a class="resume-link mono" href="Resume.pdf" target="_blank" rel="noopener">Download PDF ↗</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2 class="section-label mono">Contact</h2>
+    <p class="contact-text">Open to Lead-level UX/UI roles or related.</p>
+    <a class="contact-email" href="mailto:panita.eu@gmail.com">panita.eu@gmail.com</a>
+    <div class="contact-links mono">
+      <a href="https://linkedin.com/in/panita1990" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:panita.eu@gmail.com" target="_blank" rel="noopener">Email</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer mono">
+  <span>Panita Euawongyart - UX/UI Design Team Lead</span>
+  <span>© <span id="year"></span></span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
