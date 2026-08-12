@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMS · Transaction Redesign — Tanggwa</title>
+<meta name="description" content="Case study: redesigning the core transaction flow (Quotation, Purchase Request, Invoice) across BMS client deployments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <a href="index.html" class="mark">TW</a>
+  <nav>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#resume">Resume</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- CASE STUDY HERO -->
+  <section class="hero cs-hero">
+    <a href="index.html#bms" class="back-link mono">← Back to work</a>
+    <p class="eyebrow mono">Case Study — TXN—01</p>
+    <h1>BMS <em>Transaction</em><br>Redesign</h1>
+    <p class="hero-sub">Three of BMS's highest-traffic flows — Quotation, Purchase Request, and Invoice — rebuilt from the same brief: simplify the visual design, tighten the UX, shorten the path to done.</p>
+    <div class="cs-meta mono">
+      <div><span class="cs-meta-label">Role</span><span>UX/UI Design Team Lead</span></div>
+      <div><span class="cs-meta-label">Scope</span><span>3 modules · shared flow pattern</span></div>
+      <div><span class="cs-meta-label">Constraint</span><span>Live across multiple client deployments</span></div>
+      <div><span class="cs-meta-label">Year</span><span>2025</span></div>
+    </div>
+  </section>
+
+  <!-- CONTEXT -->
+  <section class="cs-context">
+    <div class="entry-grid">
+      <div>
+        <h4 class="mono">Brief</h4>
+        <p>The MD's ask arrived at business-level: improve the visual design, tighten the UX, and shorten the flow. No formal spec, no user research attached — translating that into concrete design decisions was the actual work.</p>
+      </div>
+      <div>
+        <h4 class="mono">Approach</h4>
+        <p>Audited each flow step by step to separate genuine business logic from steps that existed by habit. Rebuilt the visual hierarchy so critical fields surface first, and replaced dead-end placeholders — sections that looked finished but didn't function — with working components.</p>
+      </div>
+      <div>
+        <h4 class="mono">Constraints</h4>
+        <p>BMS is a TMES product, not a one-off build — this base design ships to every client, who then re-skin it to their own CI. Any change had to hold up as the foundation every deployment builds from, ruling out a full rebuild in favor of a targeted redesign.</p>
+      </div>
+      <div>
+        <h4 class="mono">Outcome</h4>
+        <p>Across all three modules: the SKU list went from an empty placeholder to a searchable, paginated table; entries could finally be saved as drafts mid-flow; and financial fields were grouped so only what's relevant shows by default. Detail below.</p>
+      </div>
+    </div>
+    <p class="cs-disclaimer mono">Design shown is TMES's default CI. Client deployments re-skin colors, logo, and branding to their own identity, with further customization available on request.</p>
+  </section>
+
+  <!-- COMPARISON 01 — QUOTATION -->
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">01 / 03</span>
+      <h3>Quotation</h3>
+    </div>
+    <p class="cs-compare-note">The clearest before/after: the old form's SKU List was a bare pagination control with no table, no search, and no way to add a line item on screen. The new version makes it the functional center of the form.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/bms/quotation-old.jpg" alt="Old Quotation form — flat single-column layout, full address block, empty SKU List placeholder" loading="lazy">
+        <figcaption class="mono">Before</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bms/quotation-new.jpg" alt="New Quotation form — sectioned layout with searchable SKU table, Import Data, and grouped summary" loading="lazy">
+        <figcaption class="mono">After</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>SKU List: placeholder → search, Import Data, editable rows, insert-below, real pagination (55 pages / 28,978 records)</li>
+      <li>Form split into labeled sections (Branch, Customer Details, SKU List) instead of one continuous column</li>
+      <li>Status shown as a stepper (Draft → Pending → Processing → Complete) instead of a single toggle</li>
+      <li>Summary regrouped — Subtotal → Discount → After Discount → Grand Total — with optional fields tucked behind "+ Add More Fields"</li>
+      <li>Added Save Draft and Preview; old form only had Cancel / Create New</li>
+    </ul>
+  </section>
+
+  <!-- COMPARISON 02 — PURCHASE REQUEST -->
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">02 / 03</span>
+      <h3>Purchase Request</h3>
+    </div>
+    <p class="cs-compare-note">The old form carried a full shipping-address block regardless of relevance, and its Payment Method field sat there reading "No available options" — a broken state left visible to the user. The new version drops what doesn't apply and adds what procurement actually needs.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/bms/pr-old.jpg" alt="Old Purchase Request form — address-heavy layout with a Payment Method field showing no available options" loading="lazy">
+        <figcaption class="mono">Before</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bms/pr-new.jpg" alt="New Purchase Request form — Branch Information and Vendor Details sections with Requested Date, Due Date, and an attachment upload" loading="lazy">
+        <figcaption class="mono">After</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Split into Branch Information and Vendor Details instead of one Address block</li>
+      <li>Added Requested Date and Due Date — fields procurement needed that the old form didn't ask for</li>
+      <li>Added an Attachment upload (drag-and-drop) for supporting documents; old form had none</li>
+      <li>Removed the dead "No available options" Payment Method field</li>
+    </ul>
+  </section>
+
+  <!-- COMPARISON 03 — INVOICE -->
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">03 / 03</span>
+      <h3>Invoice</h3>
+    </div>
+    <p class="cs-compare-note">The old "Bill Issue/Invoice" form had no way to trace a line item back to the sale order it came from — Refer Sale Order and Refer Delivery No. both sat empty with "No available options." The new form makes that link explicit, and separates what's owed from what's withheld.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/bms/invoice-old.jpg" alt="Old Invoice form — Refer Sale Order and Refer Delivery No. fields both showing no available options, cluttered financial fields at the bottom" loading="lazy">
+        <figcaption class="mono">Before</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bms/invoice-new.jpg" alt="New Invoice form — explicit Document Type, Add Sale Order linking per line, and Grand Total called out separately from Withholding Tax and Net Amount to Pay" loading="lazy">
+        <figcaption class="mono">After</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Added explicit Document Type selector and an "Add Sale Order" action with SO Ref. per line</li>
+      <li>Grand Total called out in its own highlighted block instead of blending into the field list</li>
+      <li>Withholding Tax Amount and Net Amount to Pay split apart — old form only surfaced one lump Grand Total</li>
+      <li>Removed the two "No available options" reference fields that had no working source to link to</li>
+    </ul>
+  </section>
+
+  <!-- NEXT -->
+  <section class="cs-next">
+    <a href="index.html#work" class="resume-link mono">← Back to Selected Work</a>
+  </section>
+
+</main>
+
+<footer class="site-footer mono">
+  <span>Tanggwa — UX/UI Design Team Lead</span>
+  <span>© <span id="year"></span></span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
