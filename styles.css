@@ -309,12 +309,78 @@ a{ color: inherit; text-decoration: none; }
   font-size: 0.7rem; color: rgba(255,255,255,0.45);
 }
 
+/* ---------- Case study page ---------- */
+.back-link{
+  display:inline-block; font-size: 0.75rem; color: var(--ink-soft);
+  margin-bottom: 2rem; transition: color 0.2s ease;
+}
+.back-link:hover{ color: var(--accent); }
+
+.entry-row h3 a{ transition: color 0.2s ease; }
+.entry-row h3 a:hover{ color: var(--accent); }
+
+.cs-hero{ padding-bottom: 6vh; }
+.cs-meta{
+  display:grid; grid-template-columns: repeat(4, auto); gap: 1.6rem 2.4rem;
+  margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line);
+  font-size: 0.75rem;
+}
+.cs-meta div{ display:flex; flex-direction: column; gap: 0.4rem; }
+.cs-meta-label{ color: var(--ink-faint); text-transform: uppercase; font-size: 0.68rem; }
+.cs-meta div span:last-child{ color: var(--ink); }
+
+.cs-context{ padding: 6vh var(--pad) 8vh; border-top: 1px solid var(--line); max-width: 920px; }
+.cs-context .entry-grid p{ font-size: 0.95rem; color: var(--ink-soft); }
+.cs-disclaimer{
+  margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--line);
+  font-size: 0.72rem; color: var(--ink-faint); max-width: 640px;
+}
+
+.cs-compare{ padding: 6vh var(--pad); border-top: 1px solid var(--line); max-width: 1100px; }
+.cs-compare-head{ display:flex; align-items: baseline; gap: 1.2rem; margin-bottom: 1rem; }
+.cs-compare-head h3{
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+}
+.cs-compare-note{ font-size: 0.95rem; color: var(--ink-soft); max-width: 760px; margin-bottom: 2rem; }
+
+.cs-compare-images{
+  display:grid; grid-template-columns: 1fr 1fr; gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+.cs-compare-images figure{
+  border: 1px solid var(--line);
+  background: var(--editable-bg);
+}
+.cs-compare-images img{
+  display:block; width: 100%; height: auto; border-bottom: 1px solid var(--line);
+}
+.cs-compare-images figcaption{
+  padding: 0.6rem 0.9rem; font-size: 0.7rem; color: var(--ink-faint); text-transform: uppercase;
+}
+
+.cs-changelist{
+  display:flex; flex-direction: column; gap: 0.7rem;
+  list-style: none; max-width: 760px;
+}
+.cs-changelist li{
+  font-size: 0.78rem; color: var(--ink-soft);
+  padding-left: 1.2rem; position: relative;
+}
+.cs-changelist li::before{
+  content: "—"; position: absolute; left: 0; color: var(--accent);
+}
+
+.cs-next{ padding: 8vh var(--pad) 10vh; border-top: 1px solid var(--line); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 720px){
   .site-header nav{ gap: 1.2rem; }
   .entry-grid{ grid-template-columns: 1fr; }
   .about-grid{ grid-template-columns: 1fr; }
   .work-grid{ grid-template-columns: 1fr; gap: 2.4rem; }
+  .cs-meta{ grid-template-columns: 1fr 1fr; }
+  .cs-compare-images{ grid-template-columns: 1fr; }
 }
 
 /* ---------- Motion & focus ---------- */
