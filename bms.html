@@ -26,117 +26,173 @@
 
 <main id="top">
 
-  <!-- CASE STUDY HERO -->
+  <!-- 01 OVERVIEW -->
   <section class="hero cs-hero">
     <a href="index.html#bms" class="back-link mono">← Back to work</a>
     <p class="eyebrow mono">Case Study — 01</p>
     <h1>BMS <em>Transaction</em><br>Redesign</h1>
-    <p class="hero-sub">Three of BMS's highest-traffic flows — Quotation, Purchase Request, and Invoice — rebuilt from the same brief: simplify the visual design, tighten the UX, shorten the path to done.</p>
+    <p class="hero-sub">Three of BMS's highest-traffic flows, rebuilt from a one-line brief into a shared pattern every client deployment now inherits.</p>
     <div class="cs-meta mono">
       <div><span class="cs-meta-label">Role</span><span>UX/UI Design Team Lead</span></div>
       <div><span class="cs-meta-label">Scope</span><span>3 modules · shared flow pattern</span></div>
-      <div><span class="cs-meta-label">Constraint</span><span>Live across multiple client deployments</span></div>
+      <div><span class="cs-meta-label">Constraint</span><span>Shipped across multiple client deployments</span></div>
       <div><span class="cs-meta-label">Year</span><span>2025</span></div>
     </div>
+    <nav class="cs-steps mono" aria-label="Process">
+      <a href="#brief">Brief</a><a href="#audit">Audit</a><a href="#principles">Principles</a><a href="#pattern">Pattern</a><a href="#compare">Before / After</a><a href="#handoff">Handoff</a><a href="#outcome">Outcome</a>
+    </nav>
   </section>
 
-  <!-- CONTEXT -->
-  <section class="cs-context">
-    <div class="entry-grid">
-      <div>
-        <h4 class="mono">Brief</h4>
-        <p>The MD's ask arrived at business-level: improve the visual design, tighten the UX, and shorten the flow. No formal spec, no user research attached — translating that into concrete design decisions was the actual work.</p>
-      </div>
-      <div>
-        <h4 class="mono">Approach</h4>
-        <p>Audited each flow step by step to separate genuine business logic from steps that existed by habit. Rebuilt the visual hierarchy so critical fields surface first, and replaced dead-end placeholders — sections that looked finished but didn't function — with working components.</p>
-      </div>
-      <div>
-        <h4 class="mono">Constraints</h4>
-        <p>BMS is a TMES product, not a one-off build — this base design ships to every client, who then re-skin it to their own CI. Any change had to hold up as the foundation every deployment builds from, ruling out a full rebuild in favor of a targeted redesign.</p>
-      </div>
-      <div>
-        <h4 class="mono">Outcome</h4>
-        <p>Across all three modules: the SKU list went from an empty placeholder to a searchable, paginated table; entries could finally be saved as drafts mid-flow; and financial fields were grouped so only what's relevant shows by default. Detail below.</p>
-      </div>
+  <!-- 02 BRIEF -->
+  <section class="cs-block" id="brief">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">02</span>
+      <h3>Brief</h3>
     </div>
-    <p class="cs-disclaimer mono">Design shown is TMES's default CI. Client deployments re-skin colors, logo, and branding to their own identity, with further customization available on request.</p>
+    <p class="cs-text">The MD's ask arrived at business level: improve the visual design, tighten the UX, and shorten the flow. There was no formal spec and no user research attached. Translating that into concrete design decisions was the actual work.</p>
+    <p class="cs-text">BMS is a TMES product. This base design ships to client deployments, and each client re-skins it to their own CI, so every decision had to hold up as the foundation they build from.</p>
+    <p class="cs-disclaimer mono">Design shown is TMES's default CI. Company logo is blurred. Client deployments re-skin colors, logo, and branding to their own identity.</p>
   </section>
 
-  <!-- COMPARISON 01 — QUOTATION -->
+  <!-- 03 AUDIT -->
+  <section class="cs-block" id="audit">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">03</span>
+      <h3>Audit</h3>
+    </div>
+    <p class="cs-text">I walked each existing form screen by screen, separating real business logic from things that were there by habit. Four patterns repeated across all three modules.</p>
+    <div class="cs-cards">
+      <div class="cs-card"><span class="mono">A</span><h4>Dead ends</h4><p>The SKU List was a bare pagination bar with no table. Payment Method and Refer Sale Order / Delivery all read "No available options".</p></div>
+      <div class="cs-card"><span class="mono">B</span><h4>Irrelevant fields</h4><p>The Purchase Request carried a full address block, Customer / Tax ID, and sales-style promotion, voucher and bill-discount fields.</p></div>
+      <div class="cs-card"><span class="mono">C</span><h4>Missing fields</h4><p>No Requested or Due Date, no attachments, and no way to trace an invoice line back to its sale order.</p></div>
+      <div class="cs-card"><span class="mono">D</span><h4>Flat hierarchy</h4><p>One long column, a single status toggle, Grand Total blended into the field list, and a two-button footer.</p></div>
+    </div>
+  </section>
+
+  <!-- 04 PRINCIPLES -->
+  <section class="cs-block" id="principles">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">04</span>
+      <h3>Principles</h3>
+    </div>
+    <p class="cs-text">With no spec to lean on, I turned the audit into four rules the team could check any screen against.</p>
+    <ol class="cs-principles">
+      <li><strong>No dead ends.</strong> Every control either works or isn't shown.</li>
+      <li><strong>Relevant by default.</strong> Show what the document needs; optional fields sit behind "+ Add More Fields".</li>
+      <li><strong>Traceable.</strong> A line item can be followed back to where it came from.</li>
+      <li><strong>Save at any point.</strong> Long forms shouldn't be all-or-nothing.</li>
+    </ol>
+  </section>
+
+  <!-- 05 PATTERN -->
+  <section class="cs-block" id="pattern">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">05</span>
+      <h3>Shared Pattern</h3>
+    </div>
+    <p class="cs-text">All three forms ran on the same skeleton with the same problems. Rather than patch each one, I fixed the skeleton once and applied it to every module.</p>
+    <div class="cs-cards cs-cards-4">
+      <div class="cs-card"><span class="mono">1</span><h4>Header</h4><p>Document title and status. Quotation uses a five-step stepper.</p></div>
+      <div class="cs-card"><span class="mono">2</span><h4>Sectioned body</h4><p>Branch, then party details, then SKU List, then Remark and Summary.</p></div>
+      <div class="cs-card"><span class="mono">3</span><h4>One SKU table</h4><p>A single component with a variant per module (QT / PR / INV).</p></div>
+      <div class="cs-card"><span class="mono">4</span><h4>Action bar</h4><p>Back, Submit, Preview. Save draft on Quotation and PR.</p></div>
+    </div>
+  </section>
+
+  <!-- 06 BEFORE / AFTER -->
+  <div id="compare"></div>
   <section class="cs-compare">
     <div class="cs-compare-head">
-      <span class="entry-index mono">01 / 03</span>
+      <span class="entry-index mono">06 / 01</span>
       <h3>Quotation</h3>
     </div>
-    <p class="cs-compare-note">The clearest before/after: the old form's SKU List was a bare pagination control with no table, no search, and no way to add a line item on screen. The new version makes it the functional center of the form.</p>
+    <p class="cs-compare-note">The clearest before and after. The old SKU List was a bare pagination control with no table, no search, and no way to add a line item on screen.</p>
     <div class="cs-compare-images">
       <figure>
-        <img src="images/bms/quotation-old.jpg" alt="Old Quotation form — flat single-column layout, full address block, empty SKU List placeholder" loading="lazy">
+        <img src="images/bms/quotation-old.jpg" alt="Old Quotation form: flat single-column layout, full address block, empty SKU List placeholder" loading="lazy">
         <figcaption class="mono">Before</figcaption>
       </figure>
       <figure>
-        <img src="images/bms/quotation-new.jpg" alt="New Quotation form — sectioned layout with searchable SKU table, Import Data, and grouped summary" loading="lazy">
+        <img src="images/bms/quotation-new.jpg" alt="New Quotation form: sectioned layout with searchable SKU table, Import Data, and grouped summary" loading="lazy">
         <figcaption class="mono">After</figcaption>
       </figure>
     </div>
     <ul class="cs-changelist mono">
-      <li>SKU List: placeholder → search, Import Data, editable rows, insert-below, real pagination (55 pages / 28,978 records)</li>
-      <li>Form split into labeled sections (Branch, Customer Details, SKU List) instead of one continuous column</li>
-      <li>Status shown as a stepper (Draft → Pending → Processing → Complete) instead of a single toggle</li>
-      <li>Summary regrouped — Subtotal → Discount → After Discount → Grand Total — with optional fields tucked behind "+ Add More Fields"</li>
-      <li>Added Save Draft and Preview; old form only had Cancel / Create New</li>
+      <li>SKU List goes from a bare pagination bar to a searchable, editable table with Import Data and Insert below (28,978 records across 55 pages)</li>
+      <li>Status becomes a five-step stepper: Draft, Pending, Processing, Complete, Cancel</li>
+      <li>Summary regrouped, with optional fields behind &quot;+ Add More Fields&quot; and a Show Total In Words option</li>
+      <li>Save draft and Preview added; the old form only had Cancel and Create New</li>
     </ul>
   </section>
 
-  <!-- COMPARISON 02 — PURCHASE REQUEST -->
   <section class="cs-compare">
     <div class="cs-compare-head">
-      <span class="entry-index mono">02 / 03</span>
+      <span class="entry-index mono">06 / 02</span>
       <h3>Purchase Request</h3>
     </div>
-    <p class="cs-compare-note">The old form carried a full shipping-address block regardless of relevance, and its Payment Method field sat there reading "No available options" — a broken state left visible to the user. The new version drops what doesn't apply and adds what procurement actually needs.</p>
+    <p class="cs-compare-note">The old form carried sales-style fields a purchase request doesn't need, and left a broken Payment Method field visible. The new one drops what doesn't apply and adds what procurement needs.</p>
     <div class="cs-compare-images">
       <figure>
-        <img src="images/bms/pr-old.jpg" alt="Old Purchase Request form — address-heavy layout with a Payment Method field showing no available options" loading="lazy">
+        <img src="images/bms/pr-old.jpg" alt="Old Purchase Request form: address-heavy layout with a Payment Method field showing no available options" loading="lazy">
         <figcaption class="mono">Before</figcaption>
       </figure>
       <figure>
-        <img src="images/bms/pr-new.jpg" alt="New Purchase Request form — Branch Information and Vendor Details sections with Requested Date, Due Date, and an attachment upload" loading="lazy">
+        <img src="images/bms/pr-new.jpg" alt="New Purchase Request form: Branch Information and Vendor Details sections with Requested Date, Due Date, and photo attachment" loading="lazy">
         <figcaption class="mono">After</figcaption>
       </figure>
     </div>
     <ul class="cs-changelist mono">
-      <li>Split into Branch Information and Vendor Details instead of one Address block</li>
-      <li>Added Requested Date and Due Date — fields procurement needed that the old form didn't ask for</li>
-      <li>Added an Attachment upload (drag-and-drop) for supporting documents; old form had none</li>
-      <li>Removed the dead "No available options" Payment Method field</li>
+      <li>Header fields reduced from 16 to 6; the sales-style discount summary (12 fields) removed</li>
+      <li>Dead Payment Method field removed</li>
+      <li>Requested Date, Due Date and a photo attachment (JPG / PNG) added</li>
+      <li>Save draft and Preview added</li>
     </ul>
   </section>
 
-  <!-- COMPARISON 03 — INVOICE -->
   <section class="cs-compare">
     <div class="cs-compare-head">
-      <span class="entry-index mono">03 / 03</span>
+      <span class="entry-index mono">06 / 03</span>
       <h3>Invoice</h3>
     </div>
-    <p class="cs-compare-note">The old "Bill Issue/Invoice" form had no way to trace a line item back to the sale order it came from — Refer Sale Order and Refer Delivery No. both sat empty with "No available options." The new form makes that link explicit, and separates what's owed from what's withheld.</p>
+    <p class="cs-compare-note">The old form couldn't trace a line back to its sale order: both "Refer" dropdowns sat empty. The new form makes that link explicit and separates what is owed from what is withheld.</p>
     <div class="cs-compare-images">
       <figure>
-        <img src="images/bms/invoice-old.jpg" alt="Old Invoice form — Refer Sale Order and Refer Delivery No. fields both showing no available options, cluttered financial fields at the bottom" loading="lazy">
+        <img src="images/bms/invoice-old.jpg" alt="Old Invoice form: Refer Sale Order and Refer Delivery No. both showing no available options" loading="lazy">
         <figcaption class="mono">Before</figcaption>
       </figure>
       <figure>
-        <img src="images/bms/invoice-new.jpg" alt="New Invoice form — explicit Document Type, Add Sale Order linking per line, and Grand Total called out separately from Withholding Tax and Net Amount to Pay" loading="lazy">
+        <img src="images/bms/invoice-new.jpg" alt="New Invoice form: Add Sale Order with SO Ref. per line, and Grand Total called out separately from Withholding Tax and Net Amount to Pay" loading="lazy">
         <figcaption class="mono">After</figcaption>
       </figure>
     </div>
     <ul class="cs-changelist mono">
-      <li>Added explicit Document Type selector and an "Add Sale Order" action with SO Ref. per line</li>
-      <li>Grand Total called out in its own highlighted block instead of blending into the field list</li>
-      <li>Withholding Tax Amount and Net Amount to Pay split apart — old form only surfaced one lump Grand Total</li>
-      <li>Removed the two "No available options" reference fields that had no working source to link to</li>
+      <li>The two empty &quot;Refer&quot; dropdowns become an Add Sale Order action with an SO Ref. No. on every line</li>
+      <li>Grand Total gets its own highlighted block, with Withholding Tax Amount and Net Amount to Pay beneath it</li>
     </ul>
+  </section>
+
+  <!-- 07 HANDOFF -->
+  <section class="cs-block" id="handoff">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">07</span>
+      <h3>Review &amp; Handoff</h3>
+    </div>
+    <p class="cs-text">The MD reviewed and approved the designs. At handoff I walked the dev team through the shared pattern, so each module was built from the same structure instead of three separate forms.</p>
+  </section>
+
+  <!-- 08 OUTCOME -->
+  <section class="cs-block" id="outcome">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">08</span>
+      <h3>Outcome &amp; Reflection</h3>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>The Quotation SKU list became a working table</li>
+      <li>Quotation and Purchase Request gained Save draft</li>
+      <li>Purchase Request went from 16 header fields and 12 summary fields to 6 and none (counted from the designs)</li>
+      <li>Invoice gained line-level traceability to sale orders, plus Net Amount to Pay</li>
+    </ul>
+    <p class="cs-text cs-reflect"><strong>What I'd do next.</strong> I'd measure time-to-complete with real users and test the shared pattern with people from two client deployments, so the gains are measured, not just counted from the designs.</p>
   </section>
 
   <!-- NEXT -->

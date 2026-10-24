@@ -401,3 +401,23 @@ a:focus-visible, .resume-link:focus-visible{
   outline: 2px solid var(--ink);
   outline-offset: 3px;
 }
+
+/* ---------- Case study: process blocks ---------- */
+.cs-steps{ display:flex; flex-wrap:wrap; gap:0.5rem 1.4rem; margin-top:2.4rem; font-size:0.72rem; color:var(--ink-faint); }
+.cs-steps a{ transition: color 0.2s ease; }
+.cs-steps a:hover{ color: var(--accent); }
+.cs-block{ padding: 6vh var(--pad); border-top: 1px solid var(--line); max-width: 920px; scroll-margin-top: 4rem; }
+.cs-block .cs-compare-head{ margin-bottom: 1.4rem; }
+.cs-text{ font-size: 1rem; color: var(--ink-soft); max-width: 640px; margin-bottom: 1rem; }
+.cs-cards{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.6rem; }
+.cs-cards-4{ grid-template-columns: repeat(4, 1fr); }
+.cs-card{ border: 1px solid var(--line); border-radius: 4px; padding: 1.2rem; background: var(--surface); }
+.cs-card span{ font-size: 0.7rem; color: var(--accent); }
+.cs-card h4{ font-family: var(--serif); font-weight: 400; font-size: 1.25rem; margin: 0.3rem 0 0.5rem; }
+.cs-card p{ font-size: 0.88rem; color: var(--ink-soft); }
+.cs-principles{ margin-top: 1.4rem; padding-left: 1.2rem; max-width: 640px; display:flex; flex-direction:column; gap:0.8rem; color: var(--ink-soft); }
+.cs-principles strong{ color: var(--ink); font-weight: 600; }
+.cs-reflect{ margin-top: 2rem; }
+.cs-reflect strong{ color: var(--ink); }
+@media (max-width: 900px){ .cs-cards-4{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px){ .cs-cards, .cs-cards-4{ grid-template-columns: 1fr; } }
