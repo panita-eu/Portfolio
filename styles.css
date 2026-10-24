@@ -477,3 +477,5 @@ a:focus-visible, .resume-link:focus-visible{
   .site-header nav{ gap: 0.7rem; }
   .site-header nav a{ font-size: 0.72rem; }
 }
+/* let the home hero span the full width on wide screens */
+.hero-home{ max-width: none; }
