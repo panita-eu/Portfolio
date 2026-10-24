@@ -46,18 +46,3 @@ tabs.forEach(tab => {
     });
   });
 });
-
-// Hero visual: gentle pointer parallax (skipped for reduced motion and touch)
-(function(){
-  const v = document.getElementById('heroVisual');
-  if (!v || reduceMotion || window.matchMedia('(pointer: coarse)').matches) return;
-  const hero = v.closest('.hero');
-  hero.addEventListener('mousemove', (e) => {
-    const r = hero.getBoundingClientRect();
-    v.style.setProperty('--mx', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
-    v.style.setProperty('--my', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
-  });
-  hero.addEventListener('mouseleave', () => {
-    v.style.setProperty('--mx', 0); v.style.setProperty('--my', 0);
-  });
-})();
