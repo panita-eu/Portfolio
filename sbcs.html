@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBCS · Accounting System — Tanggwa</title>
+<meta name="description" content="Case study: designing a full accounting system (AR, AP, Fixed Asset) for a client, built on the BMS component set.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <a href="index.html" class="mark">Panita Portfolio</a>
+  <nav>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#resume">Resume</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- 01 OVERVIEW -->
+  <section class="hero cs-hero">
+    <a href="index.html#sbcs" class="back-link mono">← Back to work</a>
+    <p class="eyebrow mono">Case Study — 02</p>
+    <h1>SBCS <em>Accounting</em><br>System</h1>
+    <p class="hero-sub">A full accounting system for a client running a ten-year-old one, built by extending the BMS component set and designing the accounting-specific parts from scratch.</p>
+    <div class="cs-meta mono">
+      <div><span class="cs-meta-label">Role</span><span>UX/UI Design Team Lead · sole designer</span></div>
+      <div><span class="cs-meta-label">Scope</span><span>AR · AP · Fixed Asset</span></div>
+      <div><span class="cs-meta-label">Constraint</span><span>Limited view of the legacy system</span></div>
+      <div><span class="cs-meta-label">Year</span><span>2026</span></div>
+    </div>
+    <nav class="cs-steps mono" aria-label="Process">
+      <a href="#context">Context</a><a href="#research">Research</a><a href="#decision">Decision</a><a href="#pattern">Reuse vs New</a><a href="#screens">Key screens</a><a href="#handoff">Handoff</a><a href="#outcome">Outcome</a>
+    </nav>
+  </section>
+
+  <!-- 02 CONTEXT -->
+  <section class="cs-block" id="context">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">02</span>
+      <h3>Context</h3>
+    </div>
+    <p class="cs-text">SBCS is a client of TMES. They had run the same accounting system for about ten years and wanted it replaced. The client's requirements came with the project; the design work was mine alone.</p>
+    <p class="cs-text">BMS, TMES's main product, doesn't include a full accounting suite. TMES wanted to bring a complete one into BMS as part of this work, so the design had to serve SBCS now and fit BMS later.</p>
+    <p class="cs-disclaimer mono">Client branding is blurred and customer details are masked. Screens show sample data and are my version of the design.</p>
+  </section>
+
+  <!-- 03 RESEARCH -->
+  <section class="cs-block" id="research">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">03</span>
+      <h3>Research</h3>
+    </div>
+    <p class="cs-text">Neither I nor the team had deep accounting expertise, and access to the existing system was thin.</p>
+    <div class="cs-cards">
+      <div class="cs-card"><span class="mono">A</span><h4>Partial view</h4><p>I only saw the parts of the live system the client chose to open on screen.</p></div>
+      <div class="cs-card"><span class="mono">B</span><h4>Incomplete documents</h4><p>The screenshots the client sent didn't cover everything, because of consent limits.</p></div>
+      <div class="cs-card"><span class="mono">C</span><h4>Long requirement sessions</h4><p>Gathering requirements with the client took a long time, with the PM leading the conversations.</p></div>
+      <div class="cs-card"><span class="mono">D</span><h4>Learning the domain</h4><p>I researched accounting practice myself to fill the gaps the client couldn't show me.</p></div>
+    </div>
+  </section>
+
+  <!-- 04 DECISION -->
+  <section class="cs-block" id="decision">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">04</span>
+      <h3>Decision</h3>
+    </div>
+    <p class="cs-text">I met with the MD, the PM, and the developers involved to work out how the accounting system could merge into BMS cleanly. The question was which parts could reuse BMS patterns as they were, and which needed new design.</p>
+    <p class="cs-text">We kept the BMS form skeleton for every document and designed new components only where accounting needed something BMS never had.</p>
+  </section>
+
+  <!-- 05 REUSE VS NEW -->
+  <section class="cs-block" id="pattern">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">05</span>
+      <h3>Reuse vs New</h3>
+    </div>
+    <div class="cs-cards">
+      <div class="cs-card"><span class="mono">Reused from BMS</span><h4>Form skeleton</h4>
+        <ul class="cs-list"><li>Header with document number and status</li><li>Branch and party sections</li><li>Highlighted Grand Total block with Withholding Tax and Net Amount to Pay</li><li>Remark, and a Back / Submit / Preview action bar</li><li>Re-skinned to the client's colors</li></ul></div>
+      <div class="cs-card"><span class="mono">Designed new</span><h4>Accounting layer</h4>
+        <ul class="cs-list"><li>Journal Entry tab showing an estimated entry before posting</li><li>Account Chart, VAT and WHT per line, with Debit and Credit</li><li>Tax Setting and a Payment block with Remaining amount</li><li>Asset disposal flow with gain / loss and a GL preview</li></ul></div>
+    </div>
+  </section>
+
+  <!-- 06 KEY SCREENS -->
+  <div id="screens"></div>
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">06 / 01</span>
+      <h3>Accounts Receivable</h3>
+    </div>
+    <p class="cs-compare-note">BMS-style documents with a new Journal Entry tab. Before anything posts, the user sees the estimated entry and whether it balances.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/sbcs/invoice.jpg" alt="Invoice form with the Journal Entry tab expanded, showing estimated debit and credit lines by account" loading="lazy">
+        <figcaption class="mono">Invoice</figcaption>
+      </figure>
+      <figure>
+        <img src="images/sbcs/receipt.jpg" alt="Receipt form with the Journal Entry tab expanded, showing cash at bank and accounts receivable lines" loading="lazy">
+        <figcaption class="mono">Receipt</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Estimated Journal Entry banner: not yet posted to GL, with Total Debit, Total Credit and Balance</li>
+      <li>Each account line expands to the items behind it, with a reference back to the document</li>
+      <li>Sample invoice: Accounts Receivable debit 214,000 against Sales Revenue 200,000 and Output VAT 14,000, balanced at 0.00</li>
+      <li>The receipt reverses it: cash at bank in, Accounts Receivable cleared by the same 214,000</li>
+    </ul>
+  </section>
+
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">06 / 02</span>
+      <h3>Accounts Payable</h3>
+    </div>
+    <p class="cs-compare-note">Paying out needs more than a form: expense lines carry an account and tax, and payment needs bank details and withholding tax per item.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/sbcs/payment-record.jpg" alt="Payment Record form with Journal Entry, Tax Setting and Payment sections" loading="lazy">
+        <figcaption class="mono">Payment Record</figcaption>
+      </figure>
+      <figure>
+        <img src="images/sbcs/pv-payment.jpg" alt="PV Payment form with item list, bank transfer details and withholding tax by item" loading="lazy">
+        <figcaption class="mono">PV Payment</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Payment Record: each expense line has an Account Chart, VAT, WHT, Debit and Credit, plus Tax Setting (Include / Exclude VAT, WHT 0.75 / 1 / 3%)</li>
+      <li>Sample record: rent expense 85,000 and input VAT 5,950 against Accounts Payable 90,950, balanced</li>
+      <li>PV Payment: payment by bank transfer with sender and recipient bank fields and a reference number</li>
+      <li>Withholding Tax opens a per-item table; two items at 3% withhold 1,500 and 900, 2,400 in total</li>
+    </ul>
+  </section>
+
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">06 / 03</span>
+      <h3>Fixed Asset Disposal</h3>
+    </div>
+    <p class="cs-compare-note">A flow BMS had no equivalent for. It starts from a search, then shows what the entry will do to the books before the user confirms.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/sbcs/disposal.jpg" alt="Sold, Disposal and Donate form with a selected asset, gain calculation and GL entries preview" loading="lazy">
+        <figcaption class="mono">Sold: gain</figcaption>
+      </figure>
+      <figure>
+        <img src="images/sbcs/disposal-loss.jpg" alt="Sold, Disposal and Donate form with the Disposal option selected, showing a loss calculation and GL entries preview" loading="lazy">
+        <figcaption class="mono">Disposal: loss</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Search by asset code; an empty state explains what to do first</li>
+      <li>Selected asset shows Cost, Accumulated Depreciation and Book Value (NBV)</li>
+      <li>Sold, Disposal or Donate is one choice, and the form below changes with it</li>
+      <li>Gain or loss is calculated for the user: sold at 45,000 against book value 32,500 gives a 12,500 gain, shown in green; a write-off shows its loss in red</li>
+      <li>GL Entries Preview balances before posting, with a note that posting can't be undone; a read-only record view keeps who updated it and when</li>
+    </ul>
+  </section>
+
+  <!-- 07 HANDOFF -->
+  <section class="cs-block" id="handoff">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">07</span>
+      <h3>Review &amp; Handoff</h3>
+    </div>
+    <p class="cs-text">The designs were delivered. They have since been revised by other people; the screens here are the version I made.</p>
+  </section>
+
+  <!-- 08 OUTCOME -->
+  <section class="cs-block" id="outcome">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">08</span>
+      <h3>Outcome &amp; Reflection</h3>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Designs delivered for three accounting areas: AR, AP and Fixed Asset, covering seven document flows (Customer Invoice, Receipt, Revenue Record, Vendor Invoice, PV Payment, Payment Record, Sold / Disposal / Donate)</li>
+      <li>All flows share the BMS form skeleton, so they fit into BMS later</li>
+      <li>No measured results or client feedback to report yet</li>
+    </ul>
+    <p class="cs-text cs-reflect"><strong>What I'd do next.</strong> I'd test the journal and disposal flows with working accountants. I designed them without full sight of the old system, so their feedback is the missing check.</p>
+  </section>
+
+  <!-- NEXT -->
+  <section class="cs-next">
+    <a href="index.html#work" class="resume-link mono">← Back to Selected Work</a>
+  </section>
+
+</main>
+
+<footer class="site-footer mono">
+  <span>Panita Euawongyart — UX/UI Design Team Lead</span>
+  <span>© <span id="year"></span></span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
