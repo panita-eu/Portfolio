@@ -46,3 +46,6 @@ tabs.forEach(tab => {
     });
   });
 });
+
+// Nav links: label copy used by CSS to reserve bold width (prevents hover jitter)
+document.querySelectorAll('.site-header nav a').forEach(a => { a.dataset.text = a.textContent.trim(); });
