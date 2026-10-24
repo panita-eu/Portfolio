@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DoiTung · Member Portal — Tanggwa</title>
+<meta name="description" content="Case study: using AI to produce a responsive member portal for a foundation, reusing the TMES CRM system with the client's own CI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <a href="index.html" class="mark">Panita Portfolio</a>
+  <nav>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#resume">Resume</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- 01 OVERVIEW -->
+  <section class="hero cs-hero">
+    <a href="index.html#doitung" class="back-link mono">← Back to work</a>
+    <p class="eyebrow mono">Case Study — 03</p>
+    <h1>DoiTung <em>Member</em><br>Portal</h1>
+    <p class="hero-sub">A responsive membership portal for a foundation client, produced with AI from TMES's existing CRM system and re-skinned to the client's own CI, in about half the usual design time.</p>
+    <div class="cs-meta mono">
+      <div><span class="cs-meta-label">Role</span><span>UX/UI Design Team Lead · director and reviewer</span></div>
+      <div><span class="cs-meta-label">Scope</span><span>Membership portal · desktop, tablet, mobile</span></div>
+      <div><span class="cs-meta-label">Method</span><span>AI-generated screens, human-reviewed</span></div>
+      <div><span class="cs-meta-label">Year</span><span>2026</span></div>
+    </div>
+    <nav class="cs-steps mono" aria-label="Process">
+      <a href="#context">Context</a><a href="#method">Method</a><a href="#pattern">Reuse vs New</a><a href="#screens">Key screens</a><a href="#handoff">Status</a><a href="#outcome">Outcome</a>
+    </nav>
+  </section>
+
+  <!-- 02 CONTEXT -->
+  <section class="cs-block" id="context">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">02</span>
+      <h3>Context</h3>
+    </div>
+    <p class="cs-text">DoiTung is a foundation and a client of TMES. They needed a CRM with a customer-facing membership portal. TMES already had a CRM system, so the question was how to turn it into the client's own product quickly.</p>
+    <p class="cs-text">Designing every screen by hand, across desktop, tablet and mobile, normally takes me two to three weeks because of the detail involved.</p>
+    <p class="cs-disclaimer mono">The DoiTung logo is blurred. Member names and numbers shown are sample data.</p>
+  </section>
+
+  <!-- 03 METHOD -->
+  <section class="cs-block" id="method">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">03</span>
+      <h3>Method</h3>
+    </div>
+    <p class="cs-text">I used Claude to generate the screens, based on the existing TMES CRM and with DoiTung's CI applied. I wrote the prompts and reviewed the output, and Claude did the production.</p>
+    <div class="cs-cards">
+      <div class="cs-card"><span class="mono">A</span><h4>Direct</h4><p>I described the system and asked for every screen as a responsive layout for desktop, tablet and mobile.</p></div>
+      <div class="cs-card"><span class="mono">B</span><h4>Review</h4><p>I checked each screen myself and told Claude what to correct.</p></div>
+      <div class="cs-card"><span class="mono">C</span><h4>Targeted fixes</h4><p>I only followed up on selected parts, to avoid spending tokens on a full pass.</p></div>
+    </div>
+  </section>
+
+  <!-- 04 REUSE VS NEW -->
+  <section class="cs-block" id="pattern">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">04</span>
+      <h3>Reuse vs New</h3>
+    </div>
+    <div class="cs-cards">
+      <div class="cs-card"><span class="mono">Reused from TMES CRM</span><h4>System structure</h4>
+        <ul class="cs-list"><li>The structure and patterns of the existing TMES CRM system</li></ul></div>
+      <div class="cs-card"><span class="mono">Applied for DoiTung</span><h4>Client CI</h4>
+        <ul class="cs-list"><li>Dark sidebar and serif headings with gold accents</li><li>Membership tiers: Bronze, Silver, Gold, Platinum, each with its own look</li></ul></div>
+    </div>
+  </section>
+
+  <!-- 05 KEY SCREENS -->
+  <div id="screens"></div>
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">05 / 01</span>
+      <h3>Dashboard</h3>
+    </div>
+    <p class="cs-compare-note">The member's home: points, expiring points, perks, rewards to redeem, privileges and recent transactions on one page.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/doitung/dashboard.jpg" alt="Member dashboard on desktop: welcome banner with total points, an expiring-points alert, rewards to redeem, privileges, quick actions, points breakdown and recent transactions" loading="lazy">
+        <figcaption class="mono">Dashboard · Bronze tier, desktop</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Welcome banner with Total Points, Expiring Soon and Perks Available</li>
+      <li>An alert for 320 points expiring on 31 Jul 2026, with Redeem now beside it</li>
+      <li>Rewards show their point cost, and a locked one shows how many points are still needed</li>
+      <li>Privileges, quick actions, a points breakdown and recent transactions follow below</li>
+    </ul>
+  </section>
+
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">05 / 02</span>
+      <h3>Membership Tiers</h3>
+    </div>
+    <p class="cs-compare-note">The same screens change with the member's tier, so the card, banner and badge always say where the member stands.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/doitung/tiers.jpg" alt="The My Tier banner shown four times, for Bronze, Silver, Gold and Platinum members, each with its own colour treatment" loading="lazy">
+        <figcaption class="mono">Bronze · Silver · Gold · Platinum</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Four tiers, each with its own colour and texture on the banner and badge</li>
+      <li>The Tier Journey lists each tier's benefits and shows the next ones as locked</li>
+    </ul>
+  </section>
+
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">05 / 03</span>
+      <h3>Card &amp; Profile</h3>
+    </div>
+    <p class="cs-compare-note">A digital membership card for use at the point of sale, and a profile page that keeps consent visible.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/doitung/card.jpg" alt="My Card page: membership card, a QR code to scan at the point of sale, and member details" loading="lazy">
+        <figcaption class="mono">My Card</figcaption>
+      </figure>
+      <figure>
+        <img src="images/doitung/profile.jpg" alt="My Profile page: basic information, address with Thai province fields, company details, agreement history and connected accounts" loading="lazy">
+        <figcaption class="mono">My Profile</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>My Card pairs the card with a QR code to scan at the point of sale, plus member details</li>
+      <li>Profile is split into Basic Information, Address, Company Details, Agreement History and Connected Accounts</li>
+      <li>Agreement History flags an updated privacy policy for review and keeps accepted agreements view-only</li>
+      <li>Connected accounts for LINE and Apple</li>
+    </ul>
+  </section>
+
+  <!-- 06 STATUS -->
+  <section class="cs-block" id="handoff">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">06</span>
+      <h3>Status</h3>
+    </div>
+    <p class="cs-text">The designs have been sent to the client for review. No feedback yet.</p>
+  </section>
+
+  <!-- 07 OUTCOME -->
+  <section class="cs-block" id="outcome">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">07</span>
+      <h3>Outcome &amp; Reflection</h3>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Design time dropped from an estimated two to three weeks to one to two weeks (my own estimate, not a tracked measurement)</li>
+      <li>Responsive screens for desktop, tablet and mobile came out of one workflow</li>
+      <li>No client feedback to report yet</li>
+    </ul>
+    <p class="cs-text cs-reflect"><strong>What I'd do next.</strong> I'd run a fixed consistency check on AI-generated screens before sending them out, covering every tier state and the sample data. Some tier screens still show another tier's benefits and progress text, which a checklist would catch.</p>
+  </section>
+
+  <!-- NEXT -->
+  <section class="cs-next">
+    <a href="index.html#work" class="resume-link mono">← Back to Selected Work</a>
+  </section>
+
+</main>
+
+<footer class="site-footer mono">
+  <span>Panita Euawongyart — UX/UI Design Team Lead</span>
+  <span>© <span id="year"></span></span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
