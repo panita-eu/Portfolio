@@ -465,3 +465,23 @@ a:focus-visible, .resume-link:focus-visible{
   .site-header nav{ gap: 0.7rem; }
   .site-header nav a{ font-size: 0.72rem; }
 }
+
+/* ---------- Device set: laptop + tablet + phone ---------- */
+.devices{ display:flex; align-items:flex-end; gap:3%; max-width:760px; margin-top:1.6rem; margin-bottom:1.6rem; }
+.devices .entry-thumb{ margin:0; flex:0 0 61%; max-width:none; }
+.device-tablet, .device-phone{
+  background:#1c1c1e; box-shadow:0 0 0 1px #3a3a3c inset; transform: translateY(14px);
+}
+.device-tablet{ flex:0 0 20%; padding:6px; border-radius:12px; }
+.device-phone{ flex:0 0 11%; padding:4px; border-radius:12px; }
+.device-tablet img, .device-phone img{
+  display:block; width:100%; object-fit:cover; object-position:top; background:var(--editable-bg);
+}
+.device-tablet img{ aspect-ratio:3/4; border-radius:7px; }
+.device-phone img{ aspect-ratio:9/19; border-radius:9px; }
+@media (max-width: 600px){
+  .devices{ flex-wrap:wrap; gap:1.6rem 4%; align-items:flex-end; }
+  .devices .entry-thumb{ flex:0 0 100%; }
+  .device-tablet{ flex:0 0 52%; transform:none; }
+  .device-phone{ flex:0 0 24%; transform:none; }
+}
