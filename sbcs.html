@@ -98,49 +98,73 @@
   <section class="cs-compare">
     <div class="cs-compare-head">
       <span class="entry-index mono">06 / 01</span>
-      <h3>Invoice with Journal Entry</h3>
+      <h3>Accounts Receivable</h3>
     </div>
-    <p class="cs-compare-note">A BMS-style invoice with a new Journal Entry tab. Before anything posts, the user sees the estimated entry and whether it balances.</p>
+    <p class="cs-compare-note">BMS-style documents with a new Journal Entry tab. Before anything posts, the user sees the estimated entry and whether it balances.</p>
     <div class="cs-compare-images">
       <figure>
         <img src="images/sbcs/invoice.jpg" alt="Invoice form with the Journal Entry tab expanded, showing estimated debit and credit lines by account" loading="lazy">
-        <figcaption class="mono">Invoice · Journal Entry tab</figcaption>
+        <figcaption class="mono">Invoice</figcaption>
       </figure>
       <figure>
-        <img src="images/sbcs/payment-record.jpg" alt="Payment Record form with Journal Entry, Tax Setting and Payment sections" loading="lazy">
-        <figcaption class="mono">Payment Record</figcaption>
+        <img src="images/sbcs/receipt.jpg" alt="Receipt form with the Journal Entry tab expanded, showing cash at bank and accounts receivable lines" loading="lazy">
+        <figcaption class="mono">Receipt</figcaption>
       </figure>
     </div>
     <ul class="cs-changelist mono">
       <li>Estimated Journal Entry banner: not yet posted to GL, with Total Debit, Total Credit and Balance</li>
       <li>Each account line expands to the items behind it, with a reference back to the document</li>
       <li>Sample invoice: Accounts Receivable debit 214,000 against Sales Revenue 200,000 and Output VAT 14,000, balanced at 0.00</li>
-      <li>Payment Record adds Tax Setting (Include / Exclude VAT, WHT 0.75 / 1 / 3%) and a Payment block with Remaining amount</li>
+      <li>The receipt reverses it: cash at bank in, Accounts Receivable cleared by the same 214,000</li>
     </ul>
   </section>
 
   <section class="cs-compare">
     <div class="cs-compare-head">
       <span class="entry-index mono">06 / 02</span>
+      <h3>Accounts Payable</h3>
+    </div>
+    <p class="cs-compare-note">Paying out needs more than a form: expense lines carry an account and tax, and payment needs bank details and withholding tax per item.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/sbcs/payment-record.jpg" alt="Payment Record form with Journal Entry, Tax Setting and Payment sections" loading="lazy">
+        <figcaption class="mono">Payment Record</figcaption>
+      </figure>
+      <figure>
+        <img src="images/sbcs/pv-payment.jpg" alt="PV Payment form with item list, bank transfer details and withholding tax by item" loading="lazy">
+        <figcaption class="mono">PV Payment</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Payment Record: each expense line has an Account Chart, VAT, WHT, Debit and Credit, plus Tax Setting (Include / Exclude VAT, WHT 0.75 / 1 / 3%)</li>
+      <li>Sample record: rent expense 85,000 and input VAT 5,950 against Accounts Payable 90,950, balanced</li>
+      <li>PV Payment: payment by bank transfer with sender and recipient bank fields and a reference number</li>
+      <li>Withholding Tax opens a per-item table; two items at 3% withhold 1,500 and 900, 2,400 in total</li>
+    </ul>
+  </section>
+
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">06 / 03</span>
       <h3>Fixed Asset Disposal</h3>
     </div>
     <p class="cs-compare-note">A flow BMS had no equivalent for. It starts from a search, then shows what the entry will do to the books before the user confirms.</p>
     <div class="cs-compare-images">
       <figure>
-        <img src="images/sbcs/disposal-empty.jpg" alt="Sold, Disposal and Donate form in its empty state before an asset is selected" loading="lazy">
-        <figcaption class="mono">Starts empty, search first</figcaption>
+        <img src="images/sbcs/disposal.jpg" alt="Sold, Disposal and Donate form with a selected asset, gain calculation and GL entries preview" loading="lazy">
+        <figcaption class="mono">Sold: gain</figcaption>
       </figure>
       <figure>
-        <img src="images/sbcs/disposal.jpg" alt="Sold, Disposal and Donate form with a selected asset, gain and loss calculation, and GL entries preview" loading="lazy">
-        <figcaption class="mono">Asset selected, GL preview</figcaption>
+        <img src="images/sbcs/disposal-loss.jpg" alt="Sold, Disposal and Donate form with the Disposal option selected, showing a loss calculation and GL entries preview" loading="lazy">
+        <figcaption class="mono">Disposal: loss</figcaption>
       </figure>
     </div>
     <ul class="cs-changelist mono">
       <li>Search by asset code; an empty state explains what to do first</li>
       <li>Selected asset shows Cost, Accumulated Depreciation and Book Value (NBV)</li>
       <li>Sold, Disposal or Donate is one choice, and the form below changes with it</li>
-      <li>Gain / Loss is calculated for the user: proceeds 45,000 less book value 32,500 gives 12,500</li>
-      <li>GL Entries Preview balances at 192,500 on each side, with a note that posting can't be undone</li>
+      <li>Gain or loss is calculated for the user: sold at 45,000 against book value 32,500 gives a 12,500 gain, shown in green; a write-off shows its loss in red</li>
+      <li>GL Entries Preview balances before posting, with a note that posting can't be undone; a read-only record view keeps who updated it and when</li>
     </ul>
   </section>
 
@@ -160,7 +184,7 @@
       <h3>Outcome &amp; Reflection</h3>
     </div>
     <ul class="cs-changelist mono">
-      <li>Designs delivered for three accounting areas: AR, AP and Fixed Asset, covering seven document flows</li>
+      <li>Designs delivered for three accounting areas: AR, AP and Fixed Asset, covering seven document flows (Customer Invoice, Receipt, Revenue Record, Vendor Invoice, PV Payment, Payment Record, Sold / Disposal / Donate)</li>
       <li>All flows share the BMS form skeleton, so they fit into BMS later</li>
       <li>No measured results or client feedback to report yet</li>
     </ul>
