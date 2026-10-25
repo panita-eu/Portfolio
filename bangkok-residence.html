@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bangkok Residence — Tanggwa</title>
+<meta name="description" content="Case study: a property search web app redesign with search by BTS, MRT and Airport Rail Link, designed as a pitch at Socket 9.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <a href="index.html" class="mark">Panita Portfolio</a>
+  <nav>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#resume">Resume</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- 01 OVERVIEW -->
+  <section class="hero cs-hero">
+    <a href="index.html#work" class="back-link mono">← Back to work</a>
+    <p class="eyebrow mono">Case Study — 05</p>
+    <h1>The Bangkok<br><em>Residence</em></h1>
+    <p class="hero-sub">A redesign of a property search web app, built around finding a home from the Airport Rail Link, BTS and MRT.</p>
+    <div class="cs-meta mono">
+      <div><span class="cs-meta-label">Role</span><span>UX/UI Designer · sole designer</span></div>
+      <div><span class="cs-meta-label">Scope</span><span>Web app · search, transit browsing, compare, listing</span></div>
+      <div><span class="cs-meta-label">Type</span><span>Pitch at Socket 9</span></div>
+      <div><span class="cs-meta-label">Year</span><span>2024–2025</span></div>
+    </div>
+    <nav class="cs-steps mono" aria-label="Process">
+      <a href="#context">Context</a><a href="#approach">Approach</a><a href="#decisions">Decisions</a><a href="#screens">Key screens</a><a href="#status">Status</a><a href="#reflect">Reflection</a>
+    </nav>
+  </section>
+
+  <!-- 02 CONTEXT -->
+  <section class="cs-block" id="context">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">02</span>
+      <h3>Context</h3>
+    </div>
+    <p class="cs-text">The Bangkok Residence is a property agency platform. The client wanted their web app redesigned, and wanted users to be able to search for homes from the Airport Rail Link, BTS and MRT.</p>
+    <p class="cs-text">This was a pitch. The sales team talked to the client directly and briefed me, and the Business Development team presented the design to the client. I was the only designer on it.</p>
+    <p class="cs-disclaimer mono">Listings, prices and the figures on the home page are sample content, not results of mine.</p>
+  </section>
+
+  <!-- 03 APPROACH -->
+  <section class="cs-block" id="approach">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">03</span>
+      <h3>Approach</h3>
+    </div>
+    <p class="cs-text">I started by researching several competitors' property sites to see how they handle search and location, then designed the pages myself in Figma.</p>
+    <div class="cs-cards">
+      <div class="cs-card"><span class="mono">A</span><h4>Research</h4><p>Reviewed several competitors to compare how they let people search by place.</p></div>
+      <div class="cs-card"><span class="mono">B</span><h4>Structure</h4><p>Gave transit its own entry points, next to the usual search by type and name.</p></div>
+      <div class="cs-card"><span class="mono">C</span><h4>Screens</h4><p>Designed search, transit pages, the map, comparison and the listing page.</p></div>
+    </div>
+  </section>
+
+  <!-- 04 DECISIONS -->
+  <section class="cs-block" id="decisions">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">04</span>
+      <h3>Decisions I made</h3>
+    </div>
+    <div class="cs-cards">
+      <div class="cs-card"><span class="mono">01</span><h4>Make transit a way in</h4>
+        <ul class="cs-list"><li>Each line has its own section on the home page, coloured like the line, with stations as buttons.</li></ul></div>
+      <div class="cs-card"><span class="mono">02</span><h4>Offer a map as well</h4>
+        <ul class="cs-list"><li>A system map with station search, for people who think in routes rather than names.</li></ul></div>
+      <div class="cs-card"><span class="mono">03</span><h4>Keep searches</h4>
+        <ul class="cs-list"><li>A search can be saved as a short label under the bar, so people do not have to rebuild it.</li></ul></div>
+      <div class="cs-card"><span class="mono">04</span><h4>Compare before contacting</h4>
+        <ul class="cs-list"><li>Up to three projects in a drawer, then side by side on one page.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- 05 KEY SCREENS -->
+  <div id="screens"></div>
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">05 / 01</span>
+      <h3>Search &amp; Saved Search</h3>
+    </div>
+    <p class="cs-compare-note">The home page opens on one search bar, with rent, buy and sell tabs, and a way to keep a search for next time.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/bkk/hero.jpg" alt="Home page hero with the headline, rent, buy and sell tabs, property type and location search, and a more-filters button" loading="lazy">
+        <figcaption class="mono">Home · search</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bkk/saved.jpg" alt="The same search with a saved search shown below the bar as a short label with a delete icon" loading="lazy">
+        <figcaption class="mono">Saved search</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Tabs for Rent, Buy and Sell switch the search without leaving the page</li>
+      <li>Property type and a free-text place search sit side by side, with a button for more filters</li>
+      <li>"Save this search" keeps a search as a short label under the bar, and a bin icon removes it</li>
+    </ul>
+  </section>
+
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">05 / 02</span>
+      <h3>Browse by Transit</h3>
+    </div>
+    <p class="cs-compare-note">Because the brief was to find homes from the Airport Rail Link, BTS and MRT, each line gets its own section on the home page.</p>
+    <div class="cs-compare-images one">
+      <figure>
+        <img src="images/bkk/transit.jpg" alt="Four home-page sections: near BTS with the green lines, near MRT blue line, near MRT purple line, and near Airport Rail Link, each with a coloured banner and station buttons" loading="lazy">
+        <figcaption class="mono">BTS · MRT blue · MRT purple · Airport Rail Link</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>Each section uses the line's own colour, so a person can recognise the line before reading</li>
+      <li>Stations are buttons with Thai and English names, so a tap goes to the homes near that station</li>
+      <li>Long lines keep a "more" button instead of showing every station at once</li>
+    </ul>
+  </section>
+
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">05 / 03</span>
+      <h3>Transit Page &amp; Map</h3>
+    </div>
+    <p class="cs-compare-note">Two ways into the same results: pick a line and a station, or search on the system map.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/bkk/bts.jpg" alt="Near BTS page: banner, a line selector for gold, dark green and green lines, station buttons, property type tabs and the first row of listings" loading="lazy">
+        <figcaption class="mono">Near BTS</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bkk/map.jpg" alt="Transit map page: a station search with Lat Phrao typed, the system map with a callout on MRT Lat Phrao, then property type tabs and listings" loading="lazy">
+        <figcaption class="mono">Map search</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>On the BTS page, a line selector sits above the station buttons, with property type tabs and listing cards under them</li>
+      <li>On the map page, a switch turns the rail map on, and searching a station highlights it with a callout</li>
+      <li>Listings under the map show the station as their location</li>
+    </ul>
+  </section>
+
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">05 / 04</span>
+      <h3>Compare</h3>
+    </div>
+    <p class="cs-compare-note">Up to three projects can be put side by side before contacting anyone.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/bkk/compare-drawer.jpg" alt="Popular condos grid with a side drawer titled Compare projects (3), listing three projects with price, size and rooms, and buttons to clear or compare" loading="lazy">
+        <figcaption class="mono">Compare drawer</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bkk/compare.jpg" alt="Compare page: three projects side by side with price, size, rooms, bathrooms, floor, location, year built, foreigner quota and pets allowed" loading="lazy">
+        <figcaption class="mono">Compare page</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>A tab on the edge of the screen shows how many projects are selected and opens the drawer</li>
+      <li>The compare page lines projects up by price, size, rooms, floor, location and year built</li>
+      <li>Foreigner quota and pets allowed are shown as a tick or a cross, so they can be scanned quickly</li>
+    </ul>
+  </section>
+
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">05 / 05</span>
+      <h3>Listing Detail</h3>
+    </div>
+    <p class="cs-compare-note">Where a search ends: facts first, then the tools for deciding.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/bkk/detail.jpg" alt="Listing page: photo gallery with thumbnails, title, address, size, rooms, floor and price" loading="lazy">
+        <figcaption class="mono">Gallery &amp; key facts</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bkk/detail-calc.jpg" alt="Loan calculator on the listing page with sliders for price, term and down payment, and an interest rate field" loading="lazy">
+        <figcaption class="mono">Loan calculator</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>A gallery with thumbnails leads, then the title, size, rooms, floor and price on one line</li>
+      <li>The page continues with details, nearby places, facilities, a floor plan, a location map and a virtual tour tab</li>
+      <li>A loan calculator lets people test price, term and down payment without leaving the page</li>
+    </ul>
+  </section>
+
+  <!-- 06 STATUS -->
+  <section class="cs-block" id="status">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">06</span>
+      <h3>Status</h3>
+    </div>
+    <p class="cs-text">This was a pitch design. I have no results or client feedback to report, and I did not test it with users.</p>
+  </section>
+
+  <!-- 07 REFLECTION -->
+  <section class="cs-block" id="reflect">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">07</span>
+      <h3>What I'd measure next</h3>
+    </div>
+    <p class="cs-compare-note">These are a plan, not results.</p>
+    <ul class="cs-changelist mono">
+      <li>How many searches start from a transit section or the map, compared with the search bar</li>
+      <li>Whether people who use compare go on to contact an agent</li>
+      <li>How often saved searches are reused</li>
+      <li>Time to reach a first relevant listing, tested with a small group on a station-based task</li>
+    </ul>
+  </section>
+
+  <!-- NEXT -->
+  <section class="cs-next">
+    <a href="index.html#work" class="resume-link mono">← Back to Selected Work</a>
+  </section>
+
+</main>
+
+<footer class="site-footer mono">
+  <span>Panita Euawongyart — UX/UI Design Team Lead</span>
+  <span>© <span id="year"></span></span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
