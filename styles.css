@@ -504,3 +504,9 @@ a:focus-visible, .resume-link:focus-visible{
 /* Align "Read case study" links across Socket 9 cards */
 .work-card p{ margin-bottom: 1.2rem; }
 .work-card .resume-link{ margin-top: auto; align-self: flex-start; }
+
+/* External links on Socket 9 cards */
+.work-links{ list-style:none; display:flex; flex-wrap:wrap; gap:0.5rem 1.4rem; font-size:0.78rem; margin-top:auto; padding-top:0.2rem; }
+.work-links a{ color:var(--accent); text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px; }
+.work-links a:hover, .work-links a:focus-visible{ text-decoration-thickness:1.5px; font-weight:500; }
+.work-card p.work-note{ font-size:0.7rem; color:var(--ink-faint); margin:0.8rem 0 0; }
