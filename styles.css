@@ -485,3 +485,5 @@ a:focus-visible, .resume-link:focus-visible{
   .device-tablet{ flex:0 0 58%; transform:none; }
   .device-phone{ flex:0 0 34%; transform:none; }
 }
+
+.cs-compare-images.one{ grid-template-columns: 1fr; max-width: 900px; }
