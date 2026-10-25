@@ -498,3 +498,5 @@ a:focus-visible, .resume-link:focus-visible{
 @media (max-width: 420px){
   .cs-phones, .cs-phones.cols-2{ grid-template-columns: 1fr; max-width: 300px; }
 }
+
+.cs-compare-images.one{ grid-template-columns: 1fr; max-width: 900px; }
