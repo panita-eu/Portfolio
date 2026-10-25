@@ -500,3 +500,7 @@ a:focus-visible, .resume-link:focus-visible{
 }
 
 .cs-compare-images.one{ grid-template-columns: 1fr; max-width: 900px; }
+
+/* Align "Read case study" links across Socket 9 cards */
+.work-card p{ margin-bottom: 1.2rem; }
+.work-card .resume-link{ margin-top: auto; align-self: flex-start; }
