@@ -485,3 +485,16 @@ a:focus-visible, .resume-link:focus-visible{
   .device-tablet{ flex:0 0 58%; transform:none; }
   .device-phone{ flex:0 0 34%; transform:none; }
 }
+
+/* ---------- Mobile screen sets (case studies) ---------- */
+.cs-phones{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-bottom: 2rem; max-width: 900px; }
+.cs-phones.cols-2{ grid-template-columns: repeat(2, 1fr); max-width: 620px; }
+.cs-phones figure{ border:1px solid var(--line); background: var(--editable-bg); }
+.cs-phones img{ display:block; width:100%; height:auto; border-bottom:1px solid var(--line); }
+.cs-phones figcaption{ padding:0.6rem 0.9rem; font-size:0.7rem; color:var(--ink-faint); text-transform:uppercase; }
+@media (max-width: 720px){
+  .cs-phones, .cs-phones.cols-2{ grid-template-columns: 1fr 1fr; gap:1rem; }
+}
+@media (max-width: 420px){
+  .cs-phones, .cs-phones.cols-2{ grid-template-columns: 1fr; max-width: 300px; }
+}
