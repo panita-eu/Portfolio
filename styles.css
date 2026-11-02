@@ -527,3 +527,5 @@ a:focus-visible, .resume-link:focus-visible{
 /* Single image in a compare row */
 .cs-compare-images.single{ grid-template-columns: calc(50% - 0.7rem); margin-top: 3rem; }
 @media (max-width:720px){ .cs-compare-images.single{ grid-template-columns: 1fr; } }
+
+.cs-compare-images.extra{ margin-top: 3rem; }
