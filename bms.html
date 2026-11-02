@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BMS · Transaction Redesign — Tanggwa</title>
-<meta name="description" content="Case study: redesigning the core transaction flow (Quotation, Purchase Request, Invoice) across BMS client deployments.">
+<meta name="description" content="Case study: redesigning the core transaction flows (Quotation, Purchase Request, Invoice, Good Receive Note, Delivery) across BMS client deployments.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -31,10 +31,10 @@
     <a href="index.html#bms" class="back-link mono">← Back to work</a>
     <p class="eyebrow mono">Case Study — 01</p>
     <h1>BMS <em>Transaction</em><br>Redesign</h1>
-    <p class="hero-sub">Three of BMS's highest-traffic flows, rebuilt from a one-line brief into a shared pattern every client deployment now inherits.</p>
+    <p class="hero-sub">Five of BMS's core document flows, rebuilt from a one-line brief into a shared pattern every client deployment now inherits.</p>
     <div class="cs-meta mono">
       <div><span class="cs-meta-label">Role</span><span>UX/UI Design Team Lead</span></div>
-      <div><span class="cs-meta-label">Scope</span><span>3 modules · shared flow pattern</span></div>
+      <div><span class="cs-meta-label">Scope</span><span>5 modules · shared flow pattern</span></div>
       <div><span class="cs-meta-label">Constraint</span><span>Shipped across multiple client deployments</span></div>
       <div><span class="cs-meta-label">Year</span><span>2025</span></div>
     </div>
@@ -60,7 +60,7 @@
       <span class="entry-index mono">03</span>
       <h3>Audit</h3>
     </div>
-    <p class="cs-text">I walked each existing form screen by screen, separating real business logic from things that were there by habit. Four patterns repeated across all three modules.</p>
+    <p class="cs-text">I walked each existing form screen by screen, separating real business logic from things that were there by habit. Four patterns repeated across the first three forms I audited (Quotation, Purchase Request, Invoice), and Good Receive Note and Delivery showed the same ones.</p>
     <div class="cs-cards">
       <div class="cs-card"><span class="mono">A</span><h4>Dead ends</h4><p>The SKU List was a bare pagination bar with no table. Payment Method and Refer Sale Order / Delivery all read "No available options".</p></div>
       <div class="cs-card"><span class="mono">B</span><h4>Irrelevant fields</h4><p>The Purchase Request carried a full address block, Customer / Tax ID, and sales-style promotion, voucher and bill-discount fields.</p></div>
@@ -90,11 +90,11 @@
       <span class="entry-index mono">05</span>
       <h3>Shared Pattern</h3>
     </div>
-    <p class="cs-text">All three forms ran on the same skeleton with the same problems. Rather than patch each one, I fixed the skeleton once and applied it to every module.</p>
+    <p class="cs-text">The forms ran on the same skeleton with the same problems. Rather than patch each one, I fixed the skeleton once and applied it to every module.</p>
     <div class="cs-cards cs-cards-4">
       <div class="cs-card"><span class="mono">1</span><h4>Header</h4><p>Document title and status. Quotation uses a five-step stepper.</p></div>
       <div class="cs-card"><span class="mono">2</span><h4>Sectioned body</h4><p>Branch, then party details, then SKU List, then Remark and Summary.</p></div>
-      <div class="cs-card"><span class="mono">3</span><h4>One SKU table</h4><p>A single component with a variant per module (QT / PR / INV).</p></div>
+      <div class="cs-card"><span class="mono">3</span><h4>One SKU table</h4><p>A single component with a variant per module (QT / PR / INV / GRN / DO).</p></div>
       <div class="cs-card"><span class="mono">4</span><h4>Action bar</h4><p>Back, Submit, Preview. Save draft on Quotation and PR.</p></div>
     </div>
   </section>
@@ -171,13 +171,76 @@
     </ul>
   </section>
 
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">06 / 04</span>
+      <h3>Good Receive Note</h3>
+    </div>
+    <p class="cs-compare-note">This is the receiving side of the warehouse: stock coming in against a purchase order. The old Receive Product form showed the same four problems as the others. The purchase order dropdown read &quot;No available options&quot;, and a receiving document carried sales-style discount, promotion and voucher fields. The new form follows the receiving flow: who it came from, what was ordered, what arrived, and the proof.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/bms/grn-old.jpg" alt="Old Receive Product form: Purchase Order No. and Payment Method showing no available options, an empty address block, a bare SKU List pagination bar and sales discount fields" loading="lazy">
+        <figcaption class="mono">Before (Feb 2024)</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bms/grn-new.jpg" alt="New Good Receive Note form: Branch Information, Vendor Details, searchable SKU table with Add Purchase Order and PO Ref No. per line, attachment upload, Summary with Grand Total, and Save draft, Submit and Preview" loading="lazy">
+        <figcaption class="mono">After (2025)</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>The empty purchase order dropdown becomes an Add Purchase Order action, with a PO Ref. No. on every line that links back to the order</li>
+      <li>The eight-field address block is replaced by a Vendor Details section: pick the vendor and the address, contact, phone and email follow</li>
+      <li>The bare SKU List pagination bar becomes a searchable table with Import Data, Qty, Unit, VAT, WHT and Amount per line</li>
+      <li>A photo and document attachment area is added, with upload progress, so proof of receipt stays with the document</li>
+      <li>The 12-field summary (three kinds of discount, bill discount, VAT, WHT and shipping) becomes five lines and a highlighted Grand Total (counted from the designs)</li>
+      <li>Save draft and Preview are added next to Submit; the old form only had Cancel and Create New</li>
+    </ul>
+    <div class="cs-compare-images single">
+      <figure>
+        <img src="images/bms/grn-reject.jpg" alt="Good Receive Note in Reject status, showing Reject Date, Reason, Ref DO No., read-only fields and linked PO references" loading="lazy">
+        <figcaption class="mono">After: a rejected receipt keeps its reason and reject date on the document</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-compare">
+    <div class="cs-compare-head">
+      <span class="entry-index mono">06 / 05</span>
+      <h3>Delivery</h3>
+    </div>
+    <p class="cs-compare-note">This is the outbound side: stock leaving against a sale order. The old form asked for a payment method and payment term on a delivery, and its Sale Order dropdown was empty. The new one splits the work into who it is for and how it ships, and shows what is in stock while the quantity is being entered.</p>
+    <div class="cs-compare-images">
+      <figure>
+        <img src="images/bms/do-old.jpg" alt="Old New Delivery form: Sale Order No. showing no available options, Payment Method and Payment Term, an empty address block and a bare SKU List pagination bar" loading="lazy">
+        <figcaption class="mono">Before (Feb 2024)</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bms/do-new.jpg" alt="New Delivery form with Customer Details and Shipping Details tabs, an SKU table with SO Ref. No. and Qty Delivered per line with stock on hand shown, and a Grand Total block" loading="lazy">
+        <figcaption class="mono">After (2025): Customer Details tab</figcaption>
+      </figure>
+    </div>
+    <ul class="cs-changelist mono">
+      <li>The empty Sale Order dropdown becomes an Add Sale Order action, with an SO Ref. No. on every line</li>
+      <li>Payment Method and Payment Term are removed from the delivery; what a delivery needs is split into two tabs, Customer Details and Shipping Details</li>
+      <li>Shipping Details holds Delivery Date and Shipping Methods, with rarely used fields behind &quot;+ Add More Fields&quot;</li>
+      <li>Each line shows In stock under the Qty Delivered input, so the quantity is entered with stock on hand in view</li>
+      <li>The bare SKU List pagination bar becomes a searchable table with Import Data; Grand Total gets its own highlighted block; Preview is added</li>
+    </ul>
+    <div class="cs-compare-images single">
+      <figure>
+        <img src="images/bms/do-ship.jpg" alt="New Delivery form on the Shipping Details tab with Delivery Date, Shipping Methods set to Courier Service and an Add More Fields link" loading="lazy">
+        <figcaption class="mono">After (2025): Shipping Details tab</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- 07 HANDOFF -->
   <section class="cs-block" id="handoff">
     <div class="cs-compare-head">
       <span class="entry-index mono">07</span>
       <h3>Review &amp; Handoff</h3>
     </div>
-    <p class="cs-text">The MD reviewed and approved the designs. At handoff I walked the dev team through the shared pattern, so each module was built from the same structure instead of three separate forms.</p>
+    <p class="cs-text">The MD reviewed and approved the designs. At handoff I walked the dev team through the shared pattern, so each module was built from the same structure instead of separate forms.</p>
   </section>
 
   <!-- 08 OUTCOME -->
@@ -191,8 +254,10 @@
       <li>Quotation and Purchase Request gained Save draft</li>
       <li>Purchase Request went from 16 header fields and 12 summary fields to 6 and none (counted from the designs)</li>
       <li>Invoice gained line-level traceability to sale orders, plus Net Amount to Pay</li>
+      <li>Good Receive Note and Delivery gained the same traceability (PO Ref. No. and SO Ref. No. per line), attachments on receiving, and stock on hand shown while entering a delivery quantity</li>
     </ul>
     <p class="cs-text cs-reflect"><strong>What I'd do next.</strong> I'd measure time-to-complete with real users and test the shared pattern with people from two client deployments, so the gains are measured, not just counted from the designs.</p>
+    <p class="cs-text cs-reflect"><strong>An idea I haven't designed yet.</strong> Receiving and delivery are the flows people do on a warehouse floor. If BMS needed a handheld version, I'd reuse the same document structure and SKU line, and change the interaction: scan to add a line, larger touch targets, and only the fields needed at the shelf. This is a direction, not delivered work.</p>
   </section>
 
   <!-- NEXT -->
